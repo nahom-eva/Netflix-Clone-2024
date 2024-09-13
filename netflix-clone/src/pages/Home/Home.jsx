@@ -6,12 +6,12 @@ import RowList from '../../components/Rows/RowList/RowList'
 
 function Home() {
   return (
-    <>
+    <div className='bebas-neue-regular'>
     <Header/>
     <Banner/>
     <RowList/>
     <Footer/>
-    </>
+    </div>
   )
 }
 

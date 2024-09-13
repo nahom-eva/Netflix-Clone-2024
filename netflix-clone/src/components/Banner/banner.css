@@ -9,6 +9,9 @@
   margin-left: 30px;
   padding-top: 300px;
   /* height: 190px; */
+  /* position:absolute;
+  top: 50%;
+  transform: translate(); */
 }
 .banner__title {
   font-size: 3rem;
@@ -45,7 +48,7 @@
   transition: all0.2s;
 }
 .banner__fadeBottom {
-  height: 30vh;
+  height:30vh;
   background-image: linear-gradient(
     180deg,
     transparent,
@@ -53,3 +56,18 @@
     black
   );
 }
+.banner__fadeTop {
+  height: 30vh;
+  background-image: linear-gradient(
+    0deg, /*This ensures the gradient goes from top to bottom*/
+    transparent,
+    rgba(135, 151, 187, 0.407),
+    rgb(35, 34, 34)
+  );
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1; /* This ensures it stays behind the header */
+}
+
+

@@ -1,0 +1,113 @@
+/* Modal Backdrop */
+.modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.999999); /* Slightly shrink initially */
+  animation: fadeInBackdrop 0.5s forwards ease-in-out; /* Animation for fade-in */
+}
+
+/* Fade-In Animation for Backdrop */
+@keyframes fadeInBackdrop {
+  to {
+    opacity: 1;
+    transform: scale(1); /* Bring the modal to normal size */
+  }
+}
+
+/* Modal Content */
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  height: 90%;
+  max-width: 900px;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 10px;
+  text-align: left;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: translateZ(1);
+  animation: fadeInContent 1s forwards ease-in-out 0.1s;
+}
+
+/* Fade-In Animation for Content */
+@keyframes fadeInContent {
+  to {
+    opacity: 1;
+    transform: translatezZ(2);
+  }
+}
+
+/* Close Button */
+.modal__close { 
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #3b3838;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+/* Modal Details */
+.modal__details {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.763);
+  border-radius: 10px;
+  color: #fff;
+  text-align: left;
+  margin-top: auto;
+}
+
+/* Title inside Details */
+.modal__details h2 {
+  font-size: 40px;
+}
+
+/* Trailer Button */
+.modal__button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal__button:hover {
+  background-color: #f40612;
+}
+
+/* Trailer Not Available Message */
+.modal__message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #f1c40f;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Ensure other elements like description and buttons maintain their positions */
+.modal__description {
+  margin-top: 20px;
+}
+
+.modal__button-container {
+  margin-top: 20px;
+}

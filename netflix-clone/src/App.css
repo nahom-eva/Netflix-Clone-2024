@@ -4,6 +4,12 @@
   padding: 2rem;
   text-align: center;
 } */
- .App{
-  /* background-color: black; */
- }
+ /* .App{
+  background-color: black;
+ } */
+
+ .bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}

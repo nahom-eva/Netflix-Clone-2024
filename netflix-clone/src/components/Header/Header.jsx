@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import NetflixLogo from "../../assets/images/NetflixLogo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 function Header() {
   return (
-    <div className="header_outer_container">
-      <div className="header_container">
+    <div className="header_outer_container nav">
+      <div className="header_container" id="header">
         <div className="header_left">
           <ul>
             <li>
@@ -32,8 +32,12 @@ function Header() {
             <li>
               <NotificationsNoneIcon />
             </li>
-            <li><AccountBoxIcon/></li>
-            <li><ArrowDropDownIcon/></li>
+            <li>
+              <AccountBoxIcon />
+            </li>
+            <li>
+              <ArrowDropDownIcon />
+            </li>
           </ul>
         </div>
       </div>
