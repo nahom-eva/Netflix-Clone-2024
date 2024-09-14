@@ -23,8 +23,7 @@ function Banner() {
   }, []);
 
   // useEffect(() => {
-  //   axios
-  //     .get(requests.fetchNetflixOriginals)
+  //   axios.get(requests.fetchNetflixOriginals)
   //     .then((response) => {
   //       console.log(response);
   //       setMovie(
@@ -41,9 +40,7 @@ function Banner() {
   // useEffect(() => {
   //   fetch(
   //     "https://api.themoviedb.org/3/discover/tv?api_key=8275b641311844ceb0b0822b7641183e&with_networks=213"
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => {
+  //   ).then((response) => response.json()).then((response) => {
   //       console.log(response);
   //       setMovie(
   //         response.results[Math.floor(Math.random() * response.results.length)]

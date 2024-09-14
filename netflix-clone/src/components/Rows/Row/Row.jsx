@@ -73,17 +73,22 @@ function Row({ title, fetchUrl, isLargeRow }) {
     <div className="row">
       <h1>{title}</h1> {/* The title is passed as a prop and rendered here */}
       <div className="row__posters">
-        {movies.map((movie, index) => (
-          <img
-            key={index}
-            onClick={() => handlePosterClick(movie)}
-            src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
-            alt={movie.name}
-            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-          />
-        ))}
+        {movies && movies.length > 0
+          ? movies.map((movie) =>
+              movie.backdrop_path !== null || movie.poster_path !== null ? (
+                <img
+                  key={movie.id}
+                  className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                  src={`${base_url}${
+                    isLargeRow
+                      ? movie.poster_path
+                      : movie.backdrop_path || movie.poster_path
+                  }`}
+                  onClick={() => handlePosterClick(movie)}
+                />
+              ) : null
+            )
+          : null}
       </div>
       {/* Modal Window */}
       {modalVisible && selectedMovie && (
@@ -100,7 +105,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
             <button className="modal__close" onClick={closeModal}>
               &times;
             </button>
+
             {/* YouTube trailer */}
+
             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
             <div className="modal__details">
               <h2>{selectedMovie.title || selectedMovie.name}</h2>
