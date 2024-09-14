@@ -8,6 +8,7 @@ import "./modal.css";
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]); //Stores the list of movies fetched from the API.
   const [trailerUrl, setTrailerUrl] = useState(""); //Stores the YouTube trailer URL
+
   const [selectedMovie, setSelectedMovie] = useState(null); //The movie clicked by the user to show in the modal.
   const [modalVisible, setModalVisible] = useState(false); // Tracks whether the modal window is visible or not.
   const [trailerAvailable, setTrailerAvailable] = useState(true); //  Tracks whether a trailer is available for the selected movie.

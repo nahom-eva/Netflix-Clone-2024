@@ -1,42 +1,59 @@
 .header_outer_container {
-    /* position: sticky; */
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(20, 20, 20);
-  height: 10vh;
-  color: white;
-  transition: all 0.5s;
-  transition-timing-function: ease-in;
-}
-
-.nav__black{
-    background-color: rgb(20,20,20);
-}
-.header_container{
-    width:90%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 10vh; /* Adjust height as necessary */
+    z-index: 1000; /* Ensure it's above the content */
+    background-color: transparent; /* Initially transparent */
+    transition: background-color 1.5s ; /* Smooth transition */
+  }
+  
+  /* Black background when scrolled */
+  .nav__black {
+    background-color: rgb(20, 20, 20);
+  }
+  
+  /* Header container styling */
+  .header_container {
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
-    /* background-color: yellow; */
-}
-.header_left ul{
-    width: 140%;
+  }
+  
+  /* Left and right sections */
+/* Left Section */
+.header_left ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start; /* Align items at the start */
+    gap: 20px; /* Add space between list items */
     list-style: none;
-    cursor: pointer;
-    /* background-color: lightblue; */
-}
-.header_right ul{
-    width: 150%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Right Section */
+  .header_right ul {
     display: flex;
-    justify-content: space-around;
-    list-style:none;
-    cursor:pointer;
-    /* background-color: lightgreen; */
-}
-
+    justify-content: flex-end; /* Align items to the end */
+    gap: 7px; /* Add space between list items */
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* General styling for list items */
+  .header_left ul li,
+  .header_right ul li {
+    padding: 0 10px; /* Add some padding around list items */
+    cursor: pointer;  /* Cursor changes to pointer on hover */
+  }
+  
+  
