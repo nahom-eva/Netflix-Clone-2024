@@ -30,3 +30,15 @@
   margin-left: 20px;
   color: white;
 }
+
+.no_trailer, .playing {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 4px;
+  text-align: center;
+  background-color: #f40612;
+  border: 5px #f40612 solid;
+  border-radius: 5px;
+  color: white;
+}
