@@ -111,7 +111,22 @@ function Row({ title, fetchUrl, isLargeRow }) {
             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
             <div className="modal__details">
               <h2>{selectedMovie.title || selectedMovie.name}</h2>
-              <p>{selectedMovie.overview}</p>
+              {trailerUrl ? (
+                <p
+                  style={{
+                    paddingLeft: "4px",
+                    textAlign: "center",
+                    backgroundColor: "#F40612",
+                    border: "5px #F40612 solid",
+                    borderRadius: "5px",
+                    marginTop: "2px",
+                  }}
+                >
+                  Playing Trailer
+                </p>
+              ) : (
+                <p>{selectedMovie.overview}</p>
+              )}
 
               {/* Conditionally render the Play Trailer button or "Trailer not available" message */}
               {!trailerUrl && trailerAvailable && (
