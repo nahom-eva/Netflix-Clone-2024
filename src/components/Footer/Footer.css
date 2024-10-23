@@ -1,47 +1,108 @@
-.footer_outer_container{
-    background-color: #111;
-    color: grey;
+.footer_outer_container {
+    background-color: #141414;
+    color: #b3b3b3;
     display: flex;
     justify-content: center;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
 }
-.footer_inner_container{
+
+.footer_inner_container {
     width: 60%;
-    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
-.footer_icons{
-    /* background-color: blue; */
+
+.footer_icons {
     width: 12%;
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
     color: #fff;
 }
-.footer_data{
-display: flex;
-justify-content: space-between;
-}
-.footer_data ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 12vh;
-    /* background-color: blue; */
+
+.footer_icons svg {
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
 }
 
-.footer_data ul li{
-    cursor: pointer;
+.footer_icons svg:hover {
+    transform: scale(1.2);
+    color: #FFBD39;
 }
-.service_code{
+
+/* Use CSS Grid for aligned columns */
+.footer_data {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 15px;
+    width: 100%;
+}
+
+.footer_data ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.footer_data ul li {
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-bottom: 10px;
+}
+
+.footer_data ul li:hover {
+    color: #fff;
+}
+
+/* Service code styling */
+.service_code {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: #fff 1px solid;
+    border: 1px solid #fff;
     width: 10%;
+    padding: 5px 0;
     margin: 10px 0;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
-.copy_write{
+
+.service_code:hover {
+    background-color: #fff;
+    color: #141414;
+}
+
+/* Copyright text */
+.copy_write {
     font-size: 12px;
     margin-bottom: 10px;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer_inner_container {
+        width: 90%;
+    }
+
+    .footer_data {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        gap: 20px;
+    }
+
+    .footer_icons {
+        width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_data {
+        grid-template-columns: 1fr; /* Stack columns vertically on very small screens */
+    }
 }
