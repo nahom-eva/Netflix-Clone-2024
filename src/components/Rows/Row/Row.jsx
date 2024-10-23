@@ -12,7 +12,23 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const [selectedMovie, setSelectedMovie] = useState(null); //The movie clicked by the user to show in the modal.
   const [modalVisible, setModalVisible] = useState(false); // Tracks whether the modal window is visible or not.
   const [trailerAvailable, setTrailerAvailable] = useState(true); //  Tracks whether a trailer is available for the selected movie.
+  const [playerHeight, setPlayerHeight] = useState(getInitialHeight()); // Stores the height for the YouTube player based on screen size.
   const base_url = "https://image.tmdb.org/t/p/original";
+
+  // Function to determine the initial height of the YouTube player.
+  function getInitialHeight() {
+    return window.innerWidth > 768 ? "390" : "290"; // Larger height for bigger screens, smaller for mobile.
+  }
+
+  // useEffect to handle window resize events and update player height.
+  useEffect(() => {
+    const handleResize = () => {
+      setPlayerHeight(getInitialHeight()); // Update height dynamically based on new screen size.
+    };
+
+    window.addEventListener("resize", handleResize); // Add event listener for screen resizing.
+    return () => window.removeEventListener("resize", handleResize); // Cleanup on unmount.
+  }, []); // Runs only once when the component mounts.
 
   //Fetching Movie Data with useEffect
   useEffect(() => {
@@ -62,10 +78,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   const opts = {
-    height: "390",
-    width: "100%",
+    height: playerHeight, // Dynamically sets the height based on screen size using the playerHeight state.
+    width: "100%", // Player width is set to 100% for responsive design.
     playerVars: {
-      autoplay: 1,
+      autoplay: 1, // Auto-plays the trailer when loaded.
     },
   };
 

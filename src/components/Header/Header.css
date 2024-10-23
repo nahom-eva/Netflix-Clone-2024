@@ -1,59 +1,127 @@
+/* General Styles - Mobile View (default) */
 .header_outer_container {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 10vh; /* Adjust height as necessary */
-    z-index: 1000; /* Ensure it's above the content */
-    background-color: transparent; /* Initially transparent */
-    transition: background-color 1.5s ; /* Smooth transition */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 8vh;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 1.5s;
+}
+
+/* Black background when scrolled */
+.nav__black {
+  background-color: rgb(20, 20, 20);
+}
+
+/* Header container */
+.header_container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Section */
+.header_left {
+  display: flex;
+  align-items: center;
+}
+
+/* Hamburger/X Icon - Aligned to the Right End */
+.menu_icon {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+  display: block; /* Visible on mobile */
+  margin-left: auto; /* Push to the far right */
+}
+
+/* Navigation Links - Hidden by Default on Mobile */
+.header_links {
+  display: none;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  padding: 10px 0;
+  text-align: left; /* Align links to the left */
+}
+
+.header_links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header_links ul li {
+  padding: 10px 20px; /* Add some padding */
+  cursor: pointer;
+  color: white;
+}
+
+/* Show Menu on Mobile when Open */
+.mobile_menu_open {
+  display: block;
+}
+
+/* Right Section Icons - Hidden on Mobile */
+.header_right ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Tablet and Larger Screens */
+@media (min-width: 768px) {
+  .menu_icon {
+      display: none; /* Hide menu icon on larger screens */
   }
-  
-  /* Black background when scrolled */
-  .nav__black {
-    background-color: rgb(20, 20, 20);
+
+  .header_links {
+      display: block;
+      position: static;
+      background-color: transparent;
+      width: auto;
+      text-align: left;
   }
-  
-  /* Header container styling */
-  .header_container {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .header_links ul {
+      display: flex;
+      gap: 15px;
   }
-  
-  /* Left and right sections */
-/* Left Section */
-.header_left ul {
-    display: flex;
-    justify-content: flex-start; /* Align items at the start */
-    gap: 20px; /* Add space between list items */
-    list-style: none;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Right Section */
+
   .header_right ul {
-    display: flex;
-    justify-content: flex-end; /* Align items to the end */
-    gap: 7px; /* Add space between list items */
-    list-style: none;
-    align-items: center;
-    padding: 0;
-    margin: 0;
+      display: flex; /* Show icons on larger screens */
   }
-  
-  /* General styling for list items */
-  .header_left ul li,
-  .header_right ul li {
-    padding: 0 10px; /* Add some padding around list items */
-    cursor: pointer;  /* Cursor changes to pointer on hover */
+}
+
+/* Desktop and Up */
+@media (min-width: 1024px) {
+  .header_outer_container {
+      height: 10vh;
   }
-  
-  
+
+  .header_left img {
+      width: 100px;
+  }
+
+  .header_links ul {
+      gap: 20px;
+  }
+
+  .header_right ul {
+      gap: 20px;
+  }
+}
